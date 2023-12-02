@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aoc.Cli", "Aoc.Cli\Aoc.Cli.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aoc.Types", "Aoc.Types\Aoc.Types.csproj", "{DA11E7F2-A93F-4CBE-B7C8-55B02C581115}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day01.UnitTests", "2023\Day01.UnitTests\Day01.UnitTests.csproj", "{97B02F95-A4A0-4844-B350-7E68E5F44FEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7876599F-57DF-4A12-BD25-2369E57F9271} = {748E1E00-2E87-471B-BD71-6B8B517B5654}
+		{97B02F95-A4A0-4844-B350-7E68E5F44FEE} = {748E1E00-2E87-471B-BD71-6B8B517B5654}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7876599F-57DF-4A12-BD25-2369E57F9271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -29,5 +32,9 @@ Global
 		{DA11E7F2-A93F-4CBE-B7C8-55B02C581115}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA11E7F2-A93F-4CBE-B7C8-55B02C581115}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA11E7F2-A93F-4CBE-B7C8-55B02C581115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B02F95-A4A0-4844-B350-7E68E5F44FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B02F95-A4A0-4844-B350-7E68E5F44FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B02F95-A4A0-4844-B350-7E68E5F44FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B02F95-A4A0-4844-B350-7E68E5F44FEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
