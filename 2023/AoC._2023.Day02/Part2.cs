@@ -1,8 +1,8 @@
-using Aoc.Types;
+using AoC.Types;
 
-namespace Day02;
+namespace AoC._2023.Day02;
 
-public class Part2 : IPart
+public class Part2 : ISolution
 {
     private static readonly GameFactory s_gameFactory = new();
 
@@ -17,7 +17,7 @@ public class Part2 : IPart
             s_gameFactory.Create
         );
 
-        IEnumerable<CubeSet> minCubesNeeded = games.Select(
+        IEnumerable<CubeSet> minCubesNeededForEveryGame = games.Select(
             game => game.CubeSets
                 .SelectMany(
                     x => x
@@ -33,13 +33,12 @@ public class Part2 : IPart
                 )
         );
 
-        IEnumerable<int> powers = minCubesNeeded.Select(
-            set => set.Values.Aggregate(
-                (i, k) => i * k
+        return minCubesNeededForEveryGame.Select(
+                set => set.Values.Aggregate(
+                    (i, k) => i * k
+                )
             )
-        );
-
-        return powers.Sum()
+            .Sum()
             .ToString();
     }
 }

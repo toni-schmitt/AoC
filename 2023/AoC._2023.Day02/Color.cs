@@ -1,4 +1,4 @@
-namespace Day02;
+namespace AoC._2023.Day02;
 
 public enum Color
 {

@@ -1,8 +1,8 @@
-﻿using Aoc.Types;
+﻿using AoC.Types;
 
-namespace Day02;
+namespace AoC._2023.Day02;
 
-public class Part1 : IPart
+public class Part1 : ISolution
 {
     private static readonly GameFactory s_gameFactory = new();
 

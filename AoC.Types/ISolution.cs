@@ -1,6 +1,6 @@
-﻿namespace Aoc.Types;
+﻿namespace AoC.Types;
 
-public interface IPart
+public interface ISolution
 {
     string Name { get; }
     string Description { get; }

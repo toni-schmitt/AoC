@@ -1,9 +1,9 @@
 ﻿using System.Buffers;
-using Aoc.Types;
+using AoC.Types;
 
-namespace Day01;
+namespace AoC._2023.Day01;
 
-public class Part2 : IPart
+public class Part2 : ISolution
 {
     private static readonly SearchValues<char> s_numbersSearchValues =
         SearchValues.Create(

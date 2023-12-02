@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace Day02.UnitTests;
+namespace AoC._2023.Day02.UnitTests;
 
 public class Part2Tests
 {

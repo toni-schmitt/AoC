@@ -1,4 +1,4 @@
-﻿namespace Day01;
+﻿namespace AoC._2023.Day01;
 
 internal static class StringExtensions
 {

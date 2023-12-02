@@ -1,5 +1,5 @@
-﻿using Aoc.Cli;
-using Aoc.Types;
+﻿using AoC.Cli;
+using AoC.Types;
 using Spectre.Console;
 
 Solutions.Year year = Prompt(
@@ -42,14 +42,14 @@ List<Solutions.Part> parts = Prompt(
     }
 );
 
-IEnumerable<IPart> solutions = Solutions.GetSolutions(
+IEnumerable<ISolution> solutions = Solutions.GetSolutions(
     year,
     day,
     parts.ToArray()
 );
 
 string defaultInputPath =
-    $@"C:\Dev\AoC\{year.ToString().Replace("_", null)}\Day{day.ToString().Replace("_", null)}\input.txt";
+    $@"C:\Dev\AoC\{year.ToString().Replace("_", null)}\AoC.{year}.Day{day.ToString().Replace("_", null)}\input.txt";
 
 bool useDefaultInputPath = Prompt(
     new ConfirmationPrompt(
@@ -79,7 +79,7 @@ string inputPath = useDefaultInputPath switch
     )
 };
 
-foreach (IPart solution in solutions)
+foreach (ISolution solution in solutions)
 {
     AnsiConsole.WriteLine(
         $"Executing {solution.Name} ({solution.Description}):"
