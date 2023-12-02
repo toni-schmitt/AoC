@@ -12,4 +12,8 @@
         <ProjectReference Include="..\2023\Day02\Day02.csproj"/>
     </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Spectre.Console" Version="0.48.0" />
+  </ItemGroup>
+
 </Project>

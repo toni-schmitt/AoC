@@ -6,6 +6,10 @@ public class Part1 : IPart
 {
     private readonly static GameFactory GameFactory = new();
 
+    public string Name { get; } = typeof(Part1).FullName
+                                  ?? throw new InvalidOperationException();
+    public string Description { get; } = "Elves have the most boring games";
+
     public string? Solve(IEnumerable<string> input)
     {
         CubeSet possibleWith = new()
@@ -21,18 +25,27 @@ public class Part1 : IPart
             }
         };
 
-
-        IEnumerable<Game> games = input.Select(GameFactory.Create);
+        IEnumerable<Game> games = input.Select(
+            GameFactory.Create
+        );
 
         IEnumerable<int> possibleGames = from game in games
             let maxCubeSetOfGame = game.CubeSets
-                .SelectMany(x => x)
-                .GroupBy(x => x.Key)
+                .SelectMany(
+                    x => x
+                )
+                .GroupBy(
+                    x => x.Key
+                )
                 .ToDictionary(
                     x => x.Key,
-                    x => x.Max(y => y.Value)
+                    x => x.Max(
+                        y => y.Value
+                    )
                 )
-            where maxCubeSetOfGame.All(x => x.Value <= possibleWith[x.Key])
+            where maxCubeSetOfGame.All(
+                x => x.Value <= possibleWith[x.Key]
+            )
             select game.Index;
 
         return possibleGames.Sum()

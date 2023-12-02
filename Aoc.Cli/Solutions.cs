@@ -46,29 +46,47 @@ public static class Solutions
         _2023
     }
 
-    private static Dictionary<(Year, Day, Part), Type> SolutionTypes { get; } = new()
-    {
+    private static Dictionary<(Year, Day, Part), Type> SolutionTypes { get; } =
+        new()
         {
-            (Year._2023, Day._01, Part._1), typeof(Part1)
-        },
-        {
-            (Year._2023, Day._01, Part._2), typeof(Part2)
-        },
-        {
-            (Year._2023, Day._02, Part._1), typeof(Day02.Part1)
-        },
-        {
-            (Year._2023, Day._02, Part._2), typeof(Day02.Part2)
-        }
-    };
+            {
+                (Year._2023, Day._01, Part._1), typeof(Part1)
+            },
+            {
+                (Year._2023, Day._01, Part._2), typeof(Part2)
+            },
+            {
+                (Year._2023, Day._02, Part._1), typeof(Day02.Part1)
+            },
+            {
+                (Year._2023, Day._02, Part._2), typeof(Day02.Part2)
+            }
+        };
 
     public static IPart GetSolution(Year year, Day day, Part part)
     {
         Type solutionType = SolutionTypes[(year, day, part)];
 
-        IPart solution = Activator.CreateInstance(solutionType) as IPart
-                         ?? throw new InvalidOperationException($"No solution found for year: {year} day: {day}");
+        IPart solution = Activator.CreateInstance(
+                             solutionType
+                         ) as IPart
+                         ?? throw new InvalidOperationException(
+                             $"No solution found for year: {year} day: {day}"
+                         );
 
         return solution;
     }
+
+    public static IEnumerable<IPart> GetSolutions(
+        Year year,
+        Day day,
+        params Part[] parts
+    )
+        => parts.Select(
+            part => GetSolution(
+                year,
+                day,
+                part
+            )
+        );
 }
