@@ -4,35 +4,59 @@ public class GameFactory
 {
     public Game Create(string line)
     {
-        int gameIndex = GetGameIndex(line);
-        IEnumerable<CubeSet> cubeSets = GetCubeSets(
-            line.Replace($"Game {gameIndex}:", null)
-                .Trim());
+        int gameIndex = GetGameIndex(
+            line
+        );
 
-        return new Game(gameIndex, cubeSets);
+        IEnumerable<CubeSet> cubeSets = GetCubeSets(
+            line.Replace(
+                    $"Game {gameIndex}:",
+                    null
+                )
+                .Trim()
+        );
+
+        return new Game(
+            gameIndex,
+            cubeSets
+        );
     }
 
     private static int GetGameIndex(string line)
     {
-        line = line.Replace("Game", null)
+        line = line.Replace(
+                "Game",
+                null
+            )
             .Trim();
 
-        line = line[..line.IndexOf(':')];
+        line = line[..line.IndexOf(
+            ':'
+        )];
 
-        int gameIndex = int.Parse(line);
+        int gameIndex = int.Parse(
+            line
+        );
 
         return gameIndex;
     }
 
     private static IEnumerable<CubeSet> GetCubeSets(string line)
     {
-        string[] sets = line.Split(';');
+        string[] sets = line.Split(
+            ';'
+        );
 
         foreach (string set in sets)
         {
             string[] cubes = set.Trim()
-                .Split(',');
-            CubeSet cubeSet = GetCubeSet(cubes);
+                .Split(
+                    ','
+                );
+
+            CubeSet cubeSet = GetCubeSet(
+                cubes
+            );
 
             yield return cubeSet;
         }
@@ -41,15 +65,27 @@ public class GameFactory
     private static CubeSet GetCubeSet(IEnumerable<string> cubes)
     {
         CubeSet cubeSet = new();
+
         foreach (string cube in cubes)
         {
             string[] x = cube.Trim()
-                .Split(' ');
-            int numberOfCubes = int.Parse(x[0]);
+                .Split(
+                    ' '
+                );
 
-            var color = Enum.Parse<Color>(x[1], true);
+            int numberOfCubes = int.Parse(
+                x[0]
+            );
 
-            cubeSet.Add(color, numberOfCubes);
+            Color color = Enum.Parse<Color>(
+                x[1],
+                true
+            );
+
+            cubeSet.Add(
+                color,
+                numberOfCubes
+            );
         }
 
         return cubeSet;

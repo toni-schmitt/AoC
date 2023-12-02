@@ -20,10 +20,15 @@ public class Part2Tests
             "7pqrstsixteen"
         };
 
-        var part = new Part2();
+        Part2 part = new();
 
-        string? actual = part.Solve(testInput);
+        string? actual = part.Solve(
+            testInput
+        );
 
-        Assert.Equal(expected, actual);
+        Assert.Equal(
+            expected,
+            actual
+        );
     }
 }

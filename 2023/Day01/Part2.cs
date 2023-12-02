@@ -5,12 +5,12 @@ namespace Day01;
 
 public class Part2 : IPart
 {
-    private readonly static SearchValues<char> NumbersSearchValues =
+    private static readonly SearchValues<char> s_numbersSearchValues =
         SearchValues.Create(
             "123456789"
         );
 
-    private readonly static string[] SpelledOutNumbers =
+    private static readonly string[] s_spelledOutNumbers =
     {
         "one",
         "two",
@@ -40,31 +40,30 @@ public class Part2 : IPart
 
     private static IEnumerable<int> GetNumbersFromInput(
         IEnumerable<string> input
-    )
-        => input.Select(
-            GetNumberFromLine
-        );
+    ) => input.Select(
+        GetNumberFromLine
+    );
 
     private static int GetNumberFromLine(string line)
     {
         int firstNumIndex = line.AsSpan()
             .IndexOfAny(
-                NumbersSearchValues
+                s_numbersSearchValues
             );
 
         int lastNumIndex = line.AsSpan()
             .LastIndexOfAny(
-                NumbersSearchValues
+                s_numbersSearchValues
             );
 
         (int firstSpelledOutNumIndex, int firstLength) =
             line.IndexAndLengthOfAny(
-                SpelledOutNumbers
+                s_spelledOutNumbers
             );
 
         (int lastSpelledOutNumIndex, int lastLength) =
             line.LastIndexAndLengthOfAny(
-                SpelledOutNumbers
+                s_spelledOutNumbers
             );
 
         string firstNumber =
@@ -102,7 +101,7 @@ public class Part2 : IPart
             spelledOutLength
         );
 
-        int spelledOutNumberAsInt = SpelledOutNumbers.ToList()
+        int spelledOutNumberAsInt = s_spelledOutNumbers.ToList()
                                         .IndexOf(
                                             spelledOutNumber
                                         )

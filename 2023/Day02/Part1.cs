@@ -4,7 +4,7 @@ namespace Day02;
 
 public class Part1 : IPart
 {
-    private readonly static GameFactory GameFactory = new();
+    private static readonly GameFactory s_gameFactory = new();
 
     public string Name { get; } = typeof(Part1).FullName
                                   ?? throw new InvalidOperationException();
@@ -26,7 +26,7 @@ public class Part1 : IPart
         };
 
         IEnumerable<Game> games = input.Select(
-            GameFactory.Create
+            s_gameFactory.Create
         );
 
         IEnumerable<int> possibleGames = from game in games

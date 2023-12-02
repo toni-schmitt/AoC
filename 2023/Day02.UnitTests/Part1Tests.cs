@@ -18,10 +18,15 @@ public class Part1Tests
             "Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green"
         };
 
-        var part1 = new Part1();
+        Part1 part1 = new();
 
-        string? actual = part1.Solve(testInput);
+        string? actual = part1.Solve(
+            testInput
+        );
 
-        Assert.Equal(expected, actual);
+        Assert.Equal(
+            expected,
+            actual
+        );
     }
 }

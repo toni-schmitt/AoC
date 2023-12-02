@@ -3,8 +3,7 @@ using Aoc.Types;
 using Spectre.Console;
 
 Solutions.Year year = Prompt(
-    new SelectionPrompt<Solutions.Year>()
-        .Title(
+    new SelectionPrompt<Solutions.Year>().Title(
             "Choose year"
         )
         .AddChoices(
@@ -17,8 +16,7 @@ Solutions.Year year = Prompt(
 );
 
 Solutions.Day day = Prompt(
-    new SelectionPrompt<Solutions.Day>()
-        .Title(
+    new SelectionPrompt<Solutions.Day>().Title(
             "Select day"
         )
         .AddChoices(
@@ -31,8 +29,7 @@ Solutions.Day day = Prompt(
 );
 
 List<Solutions.Part> parts = Prompt(
-    new MultiSelectionPrompt<Solutions.Part>()
-        .Title(
+    new MultiSelectionPrompt<Solutions.Part>().Title(
             "Choose parts to execute"
         )
         .AddChoices(
@@ -106,7 +103,7 @@ return;
 static T Prompt<T>(IPrompt<T> prompt, T onDebugReturn)
 {
 #if DEBUG
-    return onDebugReturn;
+return onDebugReturn;
 #else
     return AnsiConsole.Prompt(
         prompt

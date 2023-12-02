@@ -4,7 +4,7 @@ namespace Day02;
 
 public class Part2 : IPart
 {
-    private readonly static GameFactory GameFactory = new();
+    private static readonly GameFactory s_gameFactory = new();
 
     public string Name { get; } = typeof(Part2).FullName
                                   ?? throw new InvalidOperationException();
@@ -14,7 +14,7 @@ public class Part2 : IPart
     public string? Solve(IEnumerable<string> input)
     {
         IEnumerable<Game> games = input.Select(
-            GameFactory.Create
+            s_gameFactory.Create
         );
 
         IEnumerable<CubeSet> minCubesNeeded = games.Select(

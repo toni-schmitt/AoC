@@ -5,7 +5,7 @@ namespace Day01;
 
 public class Part1 : IPart
 {
-    private readonly static SearchValues<char> NumbersSearchValues =
+    private static readonly SearchValues<char> s_numbersSearchValues =
         SearchValues.Create(
             "0123456789"
         );
@@ -30,11 +30,11 @@ public class Part1 : IPart
     ) => from line in input
         let firstNumIndex = line.AsSpan()
             .IndexOfAny(
-                NumbersSearchValues
+                s_numbersSearchValues
             )
         let lastNumIndex = line.AsSpan()
             .LastIndexOfAny(
-                NumbersSearchValues
+                s_numbersSearchValues
             )
         select int.Parse(
             $"{line[firstNumIndex]}{line[lastNumIndex]}"
