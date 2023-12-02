@@ -53,6 +53,12 @@ public static class Solutions
         },
         {
             (Year._2023, Day._01, Part._2), typeof(Part2)
+        },
+        {
+            (Year._2023, Day._02, Part._1), typeof(Day02.Part1)
+        },
+        {
+            (Year._2023, Day._02, Part._2), typeof(Day02.Part2)
         }
     };
 
