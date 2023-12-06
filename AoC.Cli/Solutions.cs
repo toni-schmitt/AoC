@@ -65,7 +65,50 @@ public static class Solutions
         },
         {
             (Year._2023, Day._03, Part._2), typeof(_2023.Day03.Part2)
+        },
+        {
+            (Year._2023, Day._04, Part._1), typeof(_2023.Day04.Part1)
+        },
+        {
+            (Year._2023, Day._04, Part._2), typeof(_2023.Day04.Part2)
         }
+        // {
+        //     (Year._2023, Day._05, Part._1), typeof(_2023.Day05.Part1)
+        // },
+        // {
+        //     (Year._2023, Day._05, Part._2), typeof(_2023.Day05.Part2)
+        // },
+        // {
+        //     (Year._2023, Day._06, Part._1), typeof(_2023.Day06.Part1)
+        // },
+
+        // {
+        //     (Year._2023, Day._06, Part._2), typeof(_2023.Day06.Part2)
+        // },
+        // {
+        //     (Year._2023, Day._07, Part._1), typeof(_2023.Day07.Part1)
+        // },
+        // {
+        //     (Year._2023, Day._07, Part._2), typeof(_2023.Day07.Part2)
+        // },
+        // {
+        //     (Year._2023, Day._08, Part._1), typeof(_2023.Day08.Part1)
+        // },
+        // {
+        //     (Year._2023, Day._08, Part._2), typeof(_2023.Day08.Part2)
+        // },
+        // {
+        //     (Year._2023, Day._09, Part._1), typeof(_2023.Day09.Part1)
+        // },
+        // {
+        //     (Year._2023, Day._09, Part._2), typeof(_2023.Day09.Part2)
+        // },
+        // {
+        //     (Year._2023, Day._10, Part._1), typeof(_2023.Day10.Part1)
+        // },
+        // {
+        //     (Year._2023, Day._10, Part._2), typeof(_2023.Day10.Part2)
+        // }
     };
 
     public static ISolution GetSolution(Year year, Day day, Part part)
